@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #050505;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Glow verde no fundo */
+.background-glow {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(0,255,150,0.4), transparent 70%);
+    top: 40px;
+    filter: blur(90px);
+}
+
+/* PERFIL */
+.profile {
+    position: relative;
+    width: 340px;
+    text-align: center;
+    z-index: 1;
+}
+
+/* AVATAR MAIOR + SUSPENSO */
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transform: translateY(-15px);
+    border: 3px solid rgba(0,255,150,0.6);
+    box-shadow: 
+        0 0 25px rgba(0,255,150,0.4),
+        0 15px 35px rgba(0,0,0,0.8);
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Animação flutuando */
+@keyframes float {
+    0% { transform: translateY(-15px); }
+    50% { transform: translateY(-25px); }
+    100% { transform: translateY(-15px); }
+}
+
+h1 {
+    font-size: 26px;
+    margin-bottom: 6px;
+}
+
+.username {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* LINKS */
+.links {
+    margin-top: 35px;
+}
+
+/* BOTÕES IMERSIVOS */
+.links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    border-radius: 16px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #141414, #1f1f1f);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.05),
+        0 10px 25px rgba(0,0,0,0.8);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow no hover */
+.links a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(0,255,150,0.25), transparent 60%);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.links a:hover::before {
+    opacity: 1;
+}
+
+.links a:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow:
+        0 0 25px rgba(0,255,150,0.35),
+        0 20px 40px rgba(0,0,0,0.9);
+}
+
+/* PLAYER */
+.music-player {
+    margin-top: 30px;
+}
+
+.music-player button {
+    background: linear-gradient(135deg, #00ff99, #00cc77);
+    border: none;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #000;
+    box-shadow: 0 8px 20px rgba(0,255,150,0.4);
+    transition: 0.3s;
+}
+
+.music-player button:hover {
+    transform: scale(1.05);
+}
+
+.music-player input {
+    width: 100%;
+    margin-top: 12px;
+}
